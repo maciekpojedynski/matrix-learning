@@ -32,6 +32,8 @@ df_xy = sp.diff(df_x, y)
 df_yy = sp.diff(df_y, y)
 df_yx = sp.diff(df_y, x)
 
+df2 = []
+
 #Wartosci pochodnych drugiego stopnia
 for pt in critical_points:
     print("Punkt krytyczny: ", pt)
@@ -39,6 +41,14 @@ for pt in critical_points:
     v_yy = df_yy.subs(pt)
     v_xy = df_xy.subs(pt)
     v_yx = df_yx.subs(pt)
+    df_points = {
+        "points": pt,
+        "df_xx": v_xx, 
+        "df_yy": v_yy, 
+        "df_xy": v_xy, 
+        "df_yx": v_yx
+    }
+    df2.append(df_points)
 
 
 
@@ -48,30 +58,39 @@ if sp.simplify(df_xy - df_yx) != 0:  #sympy przechowuje je jako obiekty symbolic
     sys.exit(1)
 
 #Tworzenie macierzy Hesjana
+for key, val in enumerate(df2, start = 1):
+    point = val['points']
 
-A = sp.Matrix([
-            [v_xx,v_yy],
-            [v_xy,v_yx]
-])
+    #Wyciaganie wartosci
+    v_xx = val['df_xx']
+    v_yy = val['df_yy']
+    v_xy = val['df_xy']
+    v_yx = val['df_yx']
 
-print(A)
-#Wyznacznik macierzy
+    H = sp.Matrix([
+                [v_xx,v_xy],
+                [v_yx,v_yy]
+    ])
 
-detA = A.det()
-print(detA)
-print(type(detA))
+    print(f"Macierz {key} przypadku dla punktu {point}")
+    sp.pprint(H)
+    #Wyznacznik macierzy
 
-#Sprawdzenie czy wystepuje ekstremum lokalne
+    detH = H.det()
+    print(detH)
+    print(type(detH))
 
-if detA > 0:
-    if A[0,0] > 0:
-        print('Funkcja ma ekstremum min')
+    #Sprawdzenie czy wystepuje ekstremum lokalne
+
+    if detH > 0:
+        if H[0,0] > 0:
+            print('Funkcja ma ekstremum min')
+        else:
+            print('Funkcja ma ekstremum max')
+    elif detH <0:
+        print("funkcja nie ma ekstremum")
+        sys.exit(1)
     else:
-        print('Funkcja ma ekstremum max')
-elif detA <0:
-    print("funkcja nie ma ekstremum")
-    sys.exit(1)
-else:
-    print("Nie da sie okreslić czy występuje")
-    sys.exit(1)
+        print("Nie da sie okreslić czy występuje")
+        sys.exit(1)
 
