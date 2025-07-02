@@ -13,13 +13,33 @@ sp.pprint(f)
 df_x = sp.diff(f, x)
 df_y = sp.diff(f, y) 
 
-solution = sp.solve([df_x, df_y], (x, y)) 
-print(solution)
+sol_y = sp.solve(df_x, y) #Liczymy y z pochodnej czastkowej po x
+print(f"Possible y values are: {sol_y}")
+
+critical_points = []
+
+for i in sol_y: #Tutaj robimy pętle, bo moze byc wiecej mozliwych wartosci y niz jedna
+    df_y_sub = df_y.subs(y, i)
+    sol_x = sp.solve(df_y_sub, x)
+
+    for val_x in sol_x:
+        val_y = i.subs(x, val_x)
+        points = {x: val_x, y: val_y}
+        critical_points.append(points)
 
 df_xx = sp.diff(df_x, x)
 df_xy = sp.diff(df_x, y)
 df_yy = sp.diff(df_y, y)
 df_yx = sp.diff(df_y, x)
+
+#Wartosci pochodnych drugiego stopnia
+for pt in critical_points:
+    print("Punkt krytyczny: ", pt)
+    v_xx = df_xx.subs(pt)
+    v_yy = df_yy.subs(pt)
+    v_xy = df_xy.subs(pt)
+    v_yx = df_yx.subs(pt)
+
 
 
 #Walidacja symetrii pochodnych
@@ -30,8 +50,8 @@ if sp.simplify(df_xy - df_yx) != 0:  #sympy przechowuje je jako obiekty symbolic
 #Tworzenie macierzy Hesjana
 
 A = sp.Matrix([
-            [sp.simplify(df_xx),sp.simplify(df_xy)],
-            [sp.simplify(df_yx),sp.simplify(df_yy)]
+            [v_xx,v_yy],
+            [v_xy,v_yx]
 ])
 
 print(A)
