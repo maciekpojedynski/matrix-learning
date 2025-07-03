@@ -31,7 +31,7 @@ for idx, item in enumerate(classified, start=1):
     print(f"Determinant: {item['determinant']}")
     print(f"Classification: {item['classification']}")
 
-export_to_postgres(
+export_to_postgres( 
     classified, 
     'Extrema', 
     'postgres', 
