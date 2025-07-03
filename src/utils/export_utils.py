@@ -45,7 +45,7 @@ def export_to_postgres(results, dbname, user, password, host='localhost', port="
                 raise ValueError(f"Unknown tuple length: {len(point)}")
         elif isinstance(point, (int, float)):
             x_value = point
-            y_value = None
+            y_value = None 
         else:
             raise ValueError(f"Unknown point format: {point}")
         
