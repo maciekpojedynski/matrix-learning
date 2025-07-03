@@ -91,6 +91,6 @@ for key, val in enumerate(df2, start = 1):
         print("funkcja nie ma ekstremum")
         sys.exit(1)
     else:
-        print("Nie da sie okreslić czy występuje")
+        print("Nie da sie okreslić czy występuje :)")
         sys.exit(1)
 
