@@ -35,20 +35,22 @@ The application also supports batch processing of multiple functions from CSV fi
 - [NumPy](https://numpy.org/)
 - PostgreSQL
 
+
 ## 🚀 Project Structure
 
 matrix-learning/
--├── src/
--│ ├── main.py # Main execution script
--│ ├── utils/
--│ │ ├── sympy_utils.py # Functions for symbolic computations
--│ │ ├── export_utils.py # Export to PostgreSQL
--│ │ └── csv_processor.py # Batch processing from CSV
--│ └── data/
--│ └── functions.csv # Example input data
--├── notebooks/
--│ └── explorations.ipynb # Experimentation / drafts
--├── README.md
+├── src/
+│ ├── main.py # Main execution script
+│ ├── utils/
+│ │ ├── sympy_utils.py # Functions for symbolic computations
+│ │ ├── export_utils.py # Export to PostgreSQL
+│ │ └── csv_processor.py # Batch processing from CSV
+│ └── data/
+│ └── functions.csv # Example input data
+├── notebooks/
+│ └── explorations.ipynb # Experimentation / drafts
+├── README.md
+├── requirements.txt
 
 ## 📝 Usage
 
