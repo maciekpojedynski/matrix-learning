@@ -34,14 +34,16 @@ def find_critical_points(dfx, dfy, x, y):
         sol_y = sp.solve(dfy, y)
 
         # Tworzymy wszystkie kombinacje rozwiązań
-        for x_val in sol_x:
-            for y_val in sol_y:
-                critical_points.append({x: x_val, y: y_val})
-    else:
-        # Przypadek ogólny - układ równań
-        solutions = sp.solve([dfx, dfy], (x, y), dict=True)
-        for sol in solutions:
-            critical_points.append(sol)
+        if sol_y:
+            for x_val in sol_x:
+                for y_val in sol_y:
+                    if x_val.is_real and y_val.is_real:
+                        critical_points.append({x: x_val, y: y_val})
+        else:
+            solutions = sp.solve([dfx, dfy], (x, y), dict=True)
+            for sol in solutions:
+                if sol[x].is_real and sol[y].is_real:
+                    critical_points.append(sol)
 
     return critical_points
 

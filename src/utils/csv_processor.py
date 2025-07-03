@@ -1,3 +1,5 @@
+import psycopg2 
+import sympy as sp
 import pandas as pd
 from utils.sympy_utils import (
     parse_function_input,
@@ -27,8 +29,8 @@ def process_functions_from_csv(
         df_x = sp.diff(f, x)
         df_y = sp.diff(f, y)
 
-        critical_points = find_critical_points(df_x, df_y)
-        second_derivatives = compute_second_derivatives(df_x, df_y, critical_points)
+        critical_points = find_critical_points(df_x, df_y, x, y)
+        second_derivatives = compute_second_derivatives(df_x, df_y, critical_points, x, y)
         Hessians = evaluate_hessian_at_point(second_derivatives)
         classified = classify_extremum(Hessians)
 
