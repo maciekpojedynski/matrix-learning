@@ -6,12 +6,14 @@ The application also supports batch processing of multiple functions from CSV fi
 
 ## 📂 Project Structure
 
-notebooks/ – example Jupyter notebooks for code exploration and experiments.
-src/ – target, organized Python modules containing functions and classes.
-tests/ – unit tests (e.g., for pytest).
-data/ – (optional) input data or sample CSV files.
-README.md – project description.
-requirements.txt – list of Python dependencies.
+## 🚀 Project Structure
+
+- `notebooks/` – example Jupyter notebooks for code exploration and experiments.
+- `src/` – target, organized Python modules containing functions and classes.
+- `tests/` – unit tests (e.g., for pytest).
+- `data/` – (optional) input data or sample CSV files.
+- `README.md` – project description.
+- `requirements.txt` – list of Python dependencies.
 
 ## 📚 Features
 
@@ -36,17 +38,17 @@ requirements.txt – list of Python dependencies.
 ## 🚀 Project Structure
 
 matrix-learning/
-├── src/
-│ ├── main.py # Main execution script
-│ ├── utils/
-│ │ ├── sympy_utils.py # Functions for symbolic computations
-│ │ ├── export_utils.py # Export to PostgreSQL
-│ │ └── csv_processor.py # Batch processing from CSV
-│ └── data/
-│ └── functions.csv # Example input data
-├── notebooks/
-│ └── explorations.ipynb # Experimentation / drafts
-├── README.md
+-├── src/
+-│ ├── main.py # Main execution script
+-│ ├── utils/
+-│ │ ├── sympy_utils.py # Functions for symbolic computations
+-│ │ ├── export_utils.py # Export to PostgreSQL
+-│ │ └── csv_processor.py # Batch processing from CSV
+-│ └── data/
+-│ └── functions.csv # Example input data
+-├── notebooks/
+-│ └── explorations.ipynb # Experimentation / drafts
+-├── README.md
 
 ## 📝 Usage
 
