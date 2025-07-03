@@ -18,7 +18,7 @@ def parse_function_input(str_func):
     func = sp.sympify(str_func)
     return func, x, y
 
-def find_critical_points(dfx, dfy):
+def find_critical_points(dfx, dfy, x, y):
     """
     Find critical points using either simple or full solving strategy.
     """
@@ -45,7 +45,7 @@ def find_critical_points(dfx, dfy):
 
     return critical_points
 
-def compute_second_derivatives(dfx, dfy, critical_points):
+def compute_second_derivatives(dfx, dfy, critical_points, x, y):
     """
     Compute second order derivatives evaluated at critical points.
 
