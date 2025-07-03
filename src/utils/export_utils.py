@@ -53,9 +53,6 @@ def export_to_postgres(results, dbname, user, password, host='localhost', port="
         y_value = float(y_value) if y_value is not None else None
         det = float(item["determinant"])
         clas = str(item["classification"])
-        
-        det = float(item['determinant'])
-        clas = item['classification']
 
         print("DEBUG INSERT VALUES:", (x_value, y_value, det, clas))
 
