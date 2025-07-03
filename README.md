@@ -2,7 +2,7 @@
 
 This project is a Python tool that analyzes mathematical functions of two variables, computes critical points, builds the Hessian matrix, and classifies local extrema (minimum, maximum, saddle point).
 
-The application also supports batch processing of multiple functions from CSV files and exporting results to a PostgreSQL database.Repozytorium z kodami i notatkami do nauki NumPy i operacji na macierzach.
+The application also supports batch processing of multiple functions from CSV files and exporting results to a PostgreSQL database.
 
 ## 📂 Project Structure
 
