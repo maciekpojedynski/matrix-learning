@@ -4,8 +4,6 @@ This project is a Python tool that analyzes mathematical functions of two variab
 
 The application also supports batch processing of multiple functions from CSV files and exporting results to a PostgreSQL database.
 
-## 📂 Project Structure
-
 ## 🚀 Project Structure
 
 - `notebooks/` – example Jupyter notebooks for code exploration and experiments.
