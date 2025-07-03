@@ -1,0 +1,11 @@
+function
+x**2 + y**2
+x**2 + 3*y**2 - 4*x*y
+x**3 + y**3 - 3*x*y
+x**2 * y + y**2
+x**2 + y**2 + x*y
+sin(x)*cos(y)
+x**4 - 2*x**2*y + y**4
+x*y + log(x+1) + exp(y)
+x**2 - y**2 + 2*x - 3*y
+x**3*y - y**3*x
