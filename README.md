@@ -4,14 +4,14 @@ This project is a Python tool that analyzes mathematical functions of two variab
 
 The application also supports batch processing of multiple functions from CSV files and exporting results to a PostgreSQL database.Repozytorium z kodami i notatkami do nauki NumPy i operacji na macierzach.
 
-## 📂 Struktura projektu
+## 📂 Project Structure
 
-- `notebooks/` – przykładowe notatniki Jupyter do eksploracji kodu i eksperymentów.
-- `src/` – docelowe, uporządkowane moduły Pythona z funkcjami i klasami.
-- `tests/` – testy jednostkowe (np. dla pytest).
-- `data/` – (opcjonalnie) dane wejściowe lub przykładowe pliki CSV.
-- `README.md` – opis projektu.
-- `requirements.txt` – lista zależności Pythona.
+notebooks/ – example Jupyter notebooks for code exploration and experiments.
+src/ – target, organized Python modules containing functions and classes.
+tests/ – unit tests (e.g., for pytest).
+data/ – (optional) input data or sample CSV files.
+README.md – project description.
+requirements.txt – list of Python dependencies.
 
 ## 📚 Features
 
